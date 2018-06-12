@@ -11,6 +11,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
         let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+        let courses: any[] = JSON.parse(localStorage.getItem('courses')) || [];
 
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
@@ -107,6 +108,54 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
                     // respond 200 OK
                     return of(new HttpResponse({ status: 200 }));
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return throwError('Unauthorised');
+                }
+            }
+
+            // create course
+            if (request.url.endsWith('/api/create-course') && request.method === 'POST') {
+                // get new user object from post body
+                let newCourse = request.body;
+
+                // validation
+                let duplicateCourse = courses.filter(course => { return course.name === newCourse.name; }).length;
+                if (duplicateCourse) {
+                    return throwError('Course name "' + newCourse.username + '" is already taken');
+                }
+
+                // save new user
+                newCourse.id = courses.length + 1;
+                courses.push(newCourse);
+                localStorage.setItem('courses', JSON.stringify(courses));
+
+                // respond 200 OK
+                return of(new HttpResponse({ status: 200 }));
+            }
+
+            // get course by id
+            if (request.url.match(/\/api\/courses\/\d+$/) && request.method === 'GET') {
+                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
+                if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                    // find user by id in users array
+                    let urlParts = request.url.split('/');
+                    let id = parseInt(urlParts[urlParts.length - 1]);
+                    let matchedCourses = courses.filter(course => { return course.id === id; });
+                    let course = matchedCourses.length ? matchedCourses[0] : null;
+
+                    return of(new HttpResponse({ status: 200, body: course }));
+                } else {
+                    // return 401 not authorised if token is null or invalid
+                    return throwError('Unauthorised');
+                }
+            }
+
+            // get courses
+            if (request.url.endsWith('/api/courses') && request.method === 'GET') {
+                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
+                if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
+                    return of(new HttpResponse({ status: 200, body: courses }));
                 } else {
                     // return 401 not authorised if token is null or invalid
                     return throwError('Unauthorised');
