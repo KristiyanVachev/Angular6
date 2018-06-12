@@ -1,4 +1,39 @@
-﻿<!-- main app container -->
+﻿<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+            <!-- TODO: Show username when user is logged or register/login when he's not. -->
+            <span *ngIf="currentUser?.firstName">Hi {{currentUser.firstName}}!</span>
+            <span *ngIf="!currentUser?.firstName">Register or Login</span>
+        </ul>
+    </div>
+</nav>
+
+<!-- main app container -->
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -8,14 +43,4 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- credits -->
-<div class="text-center">
-    <p>
-        <a href="http://jasonwatmore.com/post/2018/05/16/angular-6-user-registration-and-login-example-tutorial" target="_top">Angular 6 User Registration and Login Example & Tutorial</a>
-    </p>
-    <p>
-        <a href="http://jasonwatmore.com" target="_top">JasonWatmore.com</a>
-    </p>
 </div>
