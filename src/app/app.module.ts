@@ -17,6 +17,8 @@ import {HomeComponent} from './home';
 import {LoginComponent} from './login';
 import {RegisterComponent} from './register';
 import {CreateCourseComponent} from "./courses/create-course/create-course.component";
+import {CoursesComponent} from "./courses/courses.component";
+import {CourseComponent} from "./courses/course.component";
 
 @NgModule({
     imports: [
@@ -31,7 +33,9 @@ import {CreateCourseComponent} from "./courses/create-course/create-course.compo
         HomeComponent,
         LoginComponent,
         RegisterComponent,
-        CreateCourseComponent
+        CreateCourseComponent,
+        CoursesComponent,
+        CourseComponent
     ],
     providers: [
         AuthGuard,

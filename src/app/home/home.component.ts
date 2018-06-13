@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     }
 
     private loadAllCourses() {
-        this.courseService.getAll().pipe(first()).subscribe(courses => {
+        this.courseService.getCourses().pipe(first()).subscribe(courses => {
             this.courses = courses;
         });
     }

@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class CourseService {
 
-    private coursesUrl = 'api/courses';  // URL to web api
+    private coursesUrl = '/api/courses';  // URL to web api
 
     constructor(
         private http: HttpClient) {
