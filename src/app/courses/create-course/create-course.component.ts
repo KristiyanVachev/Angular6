@@ -40,7 +40,7 @@ export class CreateCourseComponent implements OnInit {
             .subscribe(
                 data => {
                     this.alertService.success('Course added', true);
-                    this.router.navigate(['/login']);
+                    this.router.navigate(['/courses']);
                 },
                 error => {
                     this.alertService.error(error);

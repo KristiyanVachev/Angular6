@@ -50,7 +50,7 @@ export class CourseService {
 
     /** POST: add a new hero to the server */
     addCourse (course: Course): Observable<Course> {
-        return this.http.post<Course>('/api/create-course', course, httpOptions).pipe(
+        return this.http.post<Course>('/api/courses/create', course, httpOptions).pipe(
             catchError(this.handleError<Course>('addCourse'))
         );
     }

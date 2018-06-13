@@ -16,9 +16,12 @@ import {AlertService, AuthenticationService, UserService} from './_services';
 import {HomeComponent} from './home';
 import {LoginComponent} from './login';
 import {RegisterComponent} from './register';
+
 import {CreateCourseComponent} from "./courses/create-course/create-course.component";
 import {CoursesComponent} from "./courses/courses.component";
 import {CourseComponent} from "./courses/course.component";
+
+import {UsersAdministrationComponent} from "./administration/users-administration/users-administration.component";
 
 @NgModule({
     imports: [
@@ -33,9 +36,12 @@ import {CourseComponent} from "./courses/course.component";
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+
         CreateCourseComponent,
         CoursesComponent,
-        CourseComponent
+        CourseComponent,
+
+        UsersAdministrationComponent
     ],
     providers: [
         AuthGuard,

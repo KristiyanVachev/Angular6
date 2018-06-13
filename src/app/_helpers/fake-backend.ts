@@ -115,7 +115,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
 
             // create course
-            if (request.url.endsWith('/api/create-course') && request.method === 'POST') {
+            if (request.url.endsWith('/api/courses/create') && request.method === 'POST') {
                 // get new user object from post body
                 let newCourse = request.body;
 
