@@ -2,6 +2,7 @@
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import {Course, User} from "../_models";
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -10,8 +11,33 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
-        let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-        let courses: any[] = JSON.parse(localStorage.getItem('courses')) || [];
+        let users: User[] = JSON.parse(localStorage.getItem('users')) || [];
+        users.push(
+            {
+                id: 1001,
+                username: 'DemoUser',
+                firstName: 'Demo',
+                lastName: "User",
+                password: '123456',
+                coursesTaken: [
+                    {id: 1, courseId: 1001, isFinished: false, lastMaterialId: 1}
+                    ]
+            }
+            );
+
+        let courses: Course[] = JSON.parse(localStorage.getItem('courses')) || [];
+        courses.push(
+            {
+                id: 1001,
+                name: 'Deep learning',
+                description: 'Deep learning fundamentals',
+                imageUrl: 'https://www.zdnet.com/article/deep-learning-the-interest-is-more-than-latent/',
+                materials: [
+                    {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                    {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
+                    ]
+            }
+            );
 
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
