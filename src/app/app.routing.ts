@@ -16,7 +16,7 @@ const appRoutes: Routes = [
 
     { path: 'courses/create', component: CreateCourseComponent },
     { path: 'courses', component: CoursesComponent},
-    { path: 'course/:id', component: CourseComponent},
+    { path: 'courses/:id', component: CourseComponent},
 
     {path: 'administration/users', component: UsersAdministrationComponent},
 

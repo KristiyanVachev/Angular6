@@ -31,13 +31,26 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 id: 1001,
                 name: 'Deep learning',
                 description: 'Deep learning fundamentals',
-                imageUrl: 'https://www.zdnet.com/article/deep-learning-the-interest-is-more-than-latent/',
+                imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
                 materials: [
                     {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
                     {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
                     ]
             }
             );
+
+            courses.push(
+                {
+                    id: 1002,
+                    name: 'Animals',
+                    description: 'Learn the names of animals',
+                    imageUrl: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/956224/1160/772/m1/fpnw/wm0/naturalwildfriendssafarianimals_package-4-.jpg?1454449970&s=d1df7e101cc936fd62b64be6f49ac4d3',
+                    materials: [
+                        {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                        {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
+                        ]
+                }
+                );
 
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
