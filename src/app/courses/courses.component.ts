@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { first } from 'rxjs/operators';
+import { first,debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 
 import { Course } from '../_models';
@@ -31,8 +31,9 @@ export class CoursesComponent implements OnInit {
         }
 
         //TODO add separators for blank spaces
-
-        this.courseService.getCourses(term).pipe(first()).subscribe(courses => {
+        //TODO add debounce time
+        this.courseService.getCourses(term).pipe(
+            first()).subscribe(courses => {
             this.courses = courses;
         });
 

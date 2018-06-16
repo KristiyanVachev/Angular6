@@ -12,8 +12,7 @@
 </style>
 <h3>Courses</h3>
 
-<input #searchBox id="search-box"/>
-<button class="btn btn-primary" (click)="search(searchBox.value)">Search</button>
+<input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
 
 <div class="row">
     <div class="card col-md-4 col-sm-6 col-12" *ngFor="let course of courses">
