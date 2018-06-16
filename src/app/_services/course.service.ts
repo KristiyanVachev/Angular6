@@ -24,15 +24,15 @@ export class CourseService {
         return this.http.get<Course[]>('/api/courses');
     }
 
-    /** GET heroes from the server */
-    getCourses (): Observable<Course[]> {
-        return this.http.get<Course[]>(this.coursesUrl)
+    /** GET courses from the server */
+    getCourses (name?: string): Observable<Course[]> {
+        return this.http.get<Course[]>(this.coursesUrl,{params: {name: name}})
             .pipe(
                 catchError(this.handleError('getCourses', []))
             );
     }
 
-    /** GET hero by id. Will 404 if id not found */
+    /** GET course by id. Will 404 if id not found */
     getCourse(id: number): Observable<Course> {
         const url = `${this.coursesUrl}/${id}`;
         return this.http.get<Course>(url).pipe(
@@ -48,7 +48,7 @@ export class CourseService {
         );
     }*/
 
-    /** POST: add a new hero to the server */
+    /** POST: add a new course to the server */
     addCourse (course: Course): Observable<Course> {
         return this.http.post<Course>('/api/courses/create', course, httpOptions).pipe(
             catchError(this.handleError<Course>('addCourse'))

@@ -3,6 +3,7 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import {Course, User} from "../_models";
+import {st} from "@angular/core/src/render3";
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -188,14 +189,17 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
 
             // get courses
-            if (request.url.endsWith('/api/courses') && request.method === 'GET') {
-                // check for fake auth token in header and return users if valid, this security is implemented server side in a real application
-                if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
-                    return of(new HttpResponse({ status: 200, body: courses }));
-                } else {
-                    // return 401 not authorised if token is null or invalid
-                    return throwError('Unauthorised');
+            if (request.urlWithParams.startsWith('/api/courses') && request.method === 'GET') {
+                let name = this.getParameterByName('name',request.urlWithParams).toLowerCase();
+
+                if (name != 'undefined'){
+                    console.log('nameee');
+                    let coursesToReturn = courses.filter(x => x.name.toLocaleLowerCase().includes(name));
+                    console.log(coursesToReturn);
+                    return of(new HttpResponse({ status: 200, body: coursesToReturn }));
                 }
+                console.log('dont got ');
+                return of(new HttpResponse({ status: 200, body: courses }));
             }
 
             // pass through any requests not handled above
@@ -208,7 +212,20 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         .pipe(delay(500))
         .pipe(dematerialize());
     }
+
+    getParameterByName(name:string, url:string) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
 }
+
+
 
 export let fakeBackendProvider = {
     // use fake backend in place of Http service for backend-less development

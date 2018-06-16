@@ -12,6 +12,9 @@
 </style>
 <h3>Courses</h3>
 
+<input #searchBox id="search-box"/>
+<button class="btn btn-primary" (click)="search(searchBox.value)">Search</button>
+
 <div class="row">
     <div class="card col-md-4 col-sm-6 col-12" *ngFor="let course of courses">
         <img class="card-img-top" src="{{course.imageUrl}}" alt="Card image cap">
