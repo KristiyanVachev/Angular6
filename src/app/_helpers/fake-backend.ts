@@ -12,7 +12,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // array in local storage for registered users
         let users: User[] = JSON.parse(localStorage.getItem('users')) || [];
-        users.push(
+        users.concat([
             {
                 id: 1001,
                 username: 'DemoUser',
@@ -22,24 +22,21 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 coursesTaken: [
                     {id: 1, courseId: 1001, isFinished: false, lastMaterialId: 1}
                     ]
-            }
+            }]
             );
 
         let courses: Course[] = JSON.parse(localStorage.getItem('courses')) || [];
-        courses.push(
-            {
-                id: 1001,
-                name: 'Deep learning',
-                description: 'Deep learning fundamentals',
-                imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
-                materials: [
-                    {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                    {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
-                    ]
-            }
-            );
-
-            courses.push(
+        courses.concat([
+                {
+                    id: 1001,
+                    name: 'Deep learning',
+                    description: 'Deep learning fundamentals',
+                    imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
+                    materials: [
+                        {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                        {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
+                        ]
+                },
                 {
                     id: 1002,
                     name: 'Animals',
@@ -48,9 +45,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     materials: [
                         {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
                         {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
-                        ]
-                }
-                );
+                    ]
+                }]
+            );
 
         // wrap in delayed observable to simulate server api call
         return of(null).pipe(mergeMap(() => {
