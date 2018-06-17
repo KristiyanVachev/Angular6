@@ -1,0 +1,17 @@
+<div *ngIf="!course">
+    course not found
+</div>
+
+<div *ngIf="course">
+    <h2>{{ course.name}}</h2>
+    <img src="{{course.imageUrl}}"/>
+    <div>Rating: *** {{course.description}}</div>
+    Materials count:  <span *ngIf="course.materials">{{course.materials.length}}</span>  <span *ngIf="!course.materials">0</span>
+
+</div>
+
+<button (click)="goBack()">go back</button>
+<button> Start course</button>
+
+
+<div>comment section with reviews</div>

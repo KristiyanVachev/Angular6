@@ -22,6 +22,7 @@ import {CoursesComponent} from "./courses/courses.component";
 import {CourseComponent} from "./courses/course.component";
 
 import {UsersAdministrationComponent} from "./administration/users-administration/users-administration.component";
+import {CourseDetailsComponent} from "./courses/course-details/course-details.component";
 
 @NgModule({
     imports: [
@@ -40,6 +41,7 @@ import {UsersAdministrationComponent} from "./administration/users-administratio
         CreateCourseComponent,
         CoursesComponent,
         CourseComponent,
+        CourseDetailsComponent,
 
         UsersAdministrationComponent
     ],

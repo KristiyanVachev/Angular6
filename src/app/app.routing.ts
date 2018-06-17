@@ -8,6 +8,7 @@ import {CreateCourseComponent} from "./courses/create-course/create-course.compo
 import {CoursesComponent} from "./courses/courses.component";
 import {CourseComponent} from "./courses/course.component";
 import {UsersAdministrationComponent} from "./administration/users-administration/users-administration.component";
+import {CourseDetailsComponent} from "./courses/course-details/course-details.component";
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     { path: 'courses/create', component: CreateCourseComponent },
     { path: 'courses', component: CoursesComponent},
     { path: 'courses/:id', component: CourseComponent},
+    { path: 'courses/details/:id', component: CourseDetailsComponent},
 
     {path: 'administration/users', component: UsersAdministrationComponent},
 
