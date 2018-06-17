@@ -1,6 +1,6 @@
 export class CourseTaken {
     id: number;
     courseId: number;
-    lastMaterialId: number;
+    materialsFinished?: number[];
     isFinished: boolean;
 }

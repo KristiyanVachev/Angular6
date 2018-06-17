@@ -21,7 +21,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 lastName: "User",
                 password: '123456',
                 coursesTaken: [
-                    {id: 1, courseId: 1001, isFinished: false, lastMaterialId: 1}
+                    {id: 1, courseId: 1001, isFinished: false, materialsFinished: [1, 2]}
                     ]
             }]
             );
@@ -34,9 +34,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     description: 'Deep learning fundamentals',
                     imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
                     materials: [
-                        {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                        {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
-                        ]
+                        {id: 10011, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                        {id: 10012, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'},
+                        {id: 10013, name:'Finished link', description: 'Finished coursera link', type: 'Text', text:'How was it? Wanna do a test?'},
+                        {id: 10014, name:'Finish', description: 'You finished the course', type: 'Text', text:'Congtats'}
+                    ]
                 },
                 {
                     id: 1002,
@@ -44,8 +46,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                     description: 'Learn the names of animals',
                     imageUrl: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/956224/1160/772/m1/fpnw/wm0/naturalwildfriendssafarianimals_package-4-.jpg?1454449970&s=d1df7e101cc936fd62b64be6f49ac4d3',
                     materials: [
-                        {id: 1, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                        {id: 2, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
+                        {id: 10021, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                        {id: 10022, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
                     ]
                 }]
             );
