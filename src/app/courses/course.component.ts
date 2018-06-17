@@ -8,6 +8,7 @@ import { CourseService } from '../_services';
 
 @Component({
     templateUrl: './course.component.html',
+    styles: []
 })
 export class CourseComponent implements OnInit {
     course: Course;
