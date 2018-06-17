@@ -23,6 +23,7 @@ import {CourseComponent} from "./courses/course.component";
 
 import {UsersAdministrationComponent} from "./administration/users-administration/users-administration.component";
 import {CourseDetailsComponent} from "./courses/course-details/course-details.component";
+import {NavbarComponent} from "./navbar/navbar.component";
 
 @NgModule({
     imports: [
@@ -37,6 +38,7 @@ import {CourseDetailsComponent} from "./courses/course-details/course-details.co
         HomeComponent,
         LoginComponent,
         RegisterComponent,
+        NavbarComponent,
 
         CreateCourseComponent,
         CoursesComponent,

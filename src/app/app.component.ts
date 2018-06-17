@@ -1,6 +1,4 @@
-﻿import { Component } from '@angular/core';
-
-import {User} from "./_models";
+﻿import {Component} from '@angular/core';
 
 @Component({
     selector: 'app',
@@ -8,9 +6,5 @@ import {User} from "./_models";
 })
 
 export class AppComponent {
-    currentUser: User;
 
-    constructor() {
-        this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    }
 }
