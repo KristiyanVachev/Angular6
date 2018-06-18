@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 
 import { Course } from '../_models';
 import { CourseService } from '../_services';
+import {CourseTaken} from "../_models/courseTaken";
 
 @Component({
     templateUrl: './course.component.html',
@@ -12,6 +13,7 @@ import { CourseService } from '../_services';
 })
 export class CourseComponent implements OnInit {
     course: Course;
+    courseTaken: CourseTaken;
 
     constructor(
         private route: ActivatedRoute,
@@ -21,6 +23,7 @@ export class CourseComponent implements OnInit {
 
     ngOnInit(): void {
         this.getCourse();
+        this.courseTaken = {id: 1, courseId: 1001, isFinished: false, materialsFinished:[10011, 10012, 10013]};
     }
 
     getCourse(): void {
