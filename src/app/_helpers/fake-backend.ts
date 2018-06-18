@@ -25,7 +25,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 ]
             })
         }
-        
+
         let courses: Course[] = JSON.parse(localStorage.getItem('courses')) || [];
         if (courses.length < 1){
             courses.push({
