@@ -8,7 +8,7 @@
 
 <div class="container">
 	<div class="row" style="margin-left: 175px;">
-		<div class="col-xs-4 item-photo" style="width: 310px; display: inline">
+		<div *ngIf="course.imageUrl" class="col-xs-4 item-photo" style="width: 310px; display: inline">
 			<img style="max-width:300px; margin-right: 20px;" src={{course.imageUrl}} onerror='this.style.display = "none"'/>
 		</div>
 		<div class="col-xs-5" style="border:0px solid gray; display: inline-block; width: 450px">
