@@ -34,13 +34,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 description: 'Quick overview of Neural Networks, followed by a few interesting materials concerning convolutional neural networks and recurrent neural networks by Andrej Karpathy.',
                 imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
                 materials: [
-                    {id: 10011, name:'Placement test', type: 'Test', text: 'Test your knowledge.' },
-                    {id: 10012, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                    {id: 10013, name:'But what *is* a Neural Network?', description: '', type: 'Video', url: 'https://www.youtube.com/embed/aircAruvnKk'},
-                    {id: 10014, name:'CS231n: Convolutional Neural Networks', description: '', type: 'Link', url: 'http://cs231n.github.io/convolutional-networks/'},
-                    {id: 10015, name:'The Unreasonable Effectiveness of Recurrent Neural Networks', description: '', type: 'Link', url: 'http://karpathy.github.io/2015/05/21/rnn-effectiveness/'},
-                    {id: 10016, name:'10 misconceptions about Neural Networks', description: '', type: 'Link', url: 'http://www.turingfinance.com/misconceptions-about-neural-networks/'},
-                    {id: 10017, name:'Final test', description: '', type: 'Test', text:'Congrats'}
+                    {id: 10011, name:'Placement test', type: 'Test', duration: '2 minutes', text: 'Test your knowledge.' },
+                    {id: 10012, name:'Intro', type: 'Text', duration: '1 minute', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                    {id: 10013, name:'But what *is* a Neural Network?', duration: '19 minutes', type: 'Video', url: 'https://www.youtube.com/embed/aircAruvnKk'},
+                    {id: 10014, name:'CS231n: Convolutional Neural Networks', type: 'Link', duration: '12 minutes', url: 'http://cs231n.github.io/convolutional-networks/'},
+                    {id: 10015, name:'The Unreasonable Effectiveness of Recurrent Neural Networks', type: 'Link', duration: '14 minutes', url: 'http://karpathy.github.io/2015/05/21/rnn-effectiveness/'},
+                    {id: 10016, name:'10 misconceptions about Neural Networks', type: 'Link', duration: '8 minutes', url: 'http://www.turingfinance.com/misconceptions-about-neural-networks/'},
+                    {id: 10017, name:'Final test', type: 'Test', duration: '4 minutes', text:'Congrats'}
                 ]
             });
 
@@ -50,8 +50,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 description: 'Learn the names of animals',
                 imageUrl: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/956224/1160/772/m1/fpnw/wm0/naturalwildfriendssafarianimals_package-4-.jpg?1454449970&s=d1df7e101cc936fd62b64be6f49ac4d3',
                 materials: [
-                    {id: 10021, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                    {id: 10022, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
+                    {id: 10021, name:'Intro', type: 'Text', duration: '1 minutes', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                    {id: 10022, name:'Coursera course',duration: '12 minutes', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
                 ]
             });
         }

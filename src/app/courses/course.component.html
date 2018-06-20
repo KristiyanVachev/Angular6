@@ -20,7 +20,7 @@
                     </button>
                     <span class="btn btn-link" style="float: right;">
                         <i *ngIf="courseTaken.materialsFinished.indexOf(material.id) >= 0" class="fas fa-check"></i>
-                        <span *ngIf="courseTaken.materialsFinished.indexOf(material.id) < 0">4 min</span>
+                        <span *ngIf="courseTaken.materialsFinished.indexOf(material.id) < 0">{{material.duration}}</span>
                     </span>
 
                 </h5>
