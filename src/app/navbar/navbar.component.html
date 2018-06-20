@@ -58,6 +58,10 @@
                 <!-- <p></p> -->
                 <!-- <div style="float:right;"> -->
 
+                <li class="nav-item" *ngIf="currentUser?.firstName" style="float:right;">
+                    <a class="nav-link" href="#">Hi {{currentUser.firstName}}!</a>
+                </li>
+
                 <li *ngIf="currentUser?.firstName" class="nav-item" style="float: right;">
                     <a class="nav-link" [routerLink]="['/login']" onclick="window.location.reload()">Logout</a>
                     <!-- <a class="nav-link" href="/login">Login</a> -->
