@@ -27,6 +27,10 @@ export class CoursesComponent implements OnInit {
     search(term: string){
         //TODO add separators for blank spaces
         //TODO add debounce time
+
+        //Clearing localstorage
+        //localStorage.removeItem('courses');
+
         this.courseService.getCourses(term).pipe(
             first()).subscribe(courses => {
             this.courses = courses;

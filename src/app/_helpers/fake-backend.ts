@@ -46,13 +46,30 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             courses.push({
                 id: 1002,
-                name: 'Animals',
-                description: 'Learn the names of animals',
-                imageUrl: 'https://cmkt-image-prd.global.ssl.fastly.net/0.1.0/ps/956224/1160/772/m1/fpnw/wm0/naturalwildfriendssafarianimals_package-4-.jpg?1454449970&s=d1df7e101cc936fd62b64be6f49ac4d3',
-                materials: [
-                    {id: 10021, name:'Intro', type: 'Text', duration: '1 minutes', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                    {id: 10022, name:'Coursera course',duration: '12 minutes', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'}
-                ]
+                name: 'Logistic regression',
+                description: 'The basics for logistic regression. Logistic regression is used widely in the training of our most basic models.',
+                imageUrl: 'https://i2.wp.com/www.puzzlr.org/wp-content/uploads/2016/10/LogisticRegression-pic.png?fit=499%2C307'
+            });
+
+            courses.push({
+                id: 1003,
+                name: 'NLP',
+                description: 'Natural language processing is an important part of our company and we have may projects using it.',
+                imageUrl: 'https://www.themavencircle.com/wp-content/uploads/2016/03/Neuro-linguistic-Programming-650x435.jpg'
+            });
+
+            courses.push({
+                id: 1004,
+                name: 'Embeddings',
+                description: 'Embeddings are very important part for our NLP team. Every member of this team must have an in-depth understanding of the concepts of embeddings!',
+                imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR19dj2tzI2om9q7Ma1QnxiXZZ-IocctLOAkXE8Mlz8BV-IOsO3jw'
+            });
+
+            courses.push({
+                id: 1005,
+                name: 'Feature engineering',
+                description: 'Feature engineering is also an important part of our day to day work.',
+                imageUrl: 'https://api.ning.com/files/ewwzspTVVqZ7yGyi4JAL8UaSr7FgAFg4HhNKRKM51v3ofDqR0VcBGJkio9C6je8BKC7DeCrxiZ91hpB0c*C6RlNOd04RPyK2/powertools.png'
             });
         }
 
