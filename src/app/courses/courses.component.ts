@@ -25,11 +25,6 @@ export class CoursesComponent implements OnInit {
     }
 
     search(term: string){
-
-        if (term == ''){
-            return;
-        }
-
         //TODO add separators for blank spaces
         //TODO add debounce time
         this.courseService.getCourses(term).pipe(
