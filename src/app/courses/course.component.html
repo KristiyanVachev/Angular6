@@ -31,9 +31,9 @@
                     <p *ngIf="material.text">{{material.text}}</p>
                     <a *ngIf="material.type == 'Link'" href={{material.url}}>{{material.url}}</a>
                     <quiz *ngIf="material.type == 'Test'" [materialId]="material.id"></quiz>
-                    <iframe *ngIf="material.type == 'Video'" width="560" height="315" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <div style="text-align: center;"><iframe *ngIf="material.type == 'Video'" width="560" height="315" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 
-                    <a (click)="markAsFinished(material.id)">Mark as finished</a>
+                    <div style="text-align: right; color: green;"><i class="fas fa-check"></i> <a (click)="markAsFinished(material.id)"> Mark as complete</a></div>
                 </div>
             </div>
         </div>
