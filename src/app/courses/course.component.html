@@ -29,7 +29,7 @@
             <div [attr.id]="'collapse' + i" class="collapse" [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
                 <div class="card-body">
                     <p *ngIf="material.text">{{material.text}}</p>
-                    <a *ngIf="material.type == 'Link'" href={{material.url}}>{{material.url}}</a>
+                    <a target="_blank" *ngIf="material.type == 'Link'" href={{material.url}}>{{material.url}}</a>
                     <quiz *ngIf="material.type == 'Test'" [materialId]="material.id"></quiz>
                     <div style="text-align: center;"><iframe *ngIf="material.type == 'Video'" width="560" height="315" src="https://www.youtube.com/embed/aircAruvnKk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
 

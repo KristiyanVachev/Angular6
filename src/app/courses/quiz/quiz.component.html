@@ -8,8 +8,9 @@
                     <label *ngFor="let answer of currentQuestion.answers" class="element-animation1 btn btn-lg btn-primary btn-block" (click)="sendAnswer()">{{answer}}</label>
                 </div>
                 <div *ngIf="currentQuestion.question == 'Results'">
-                    You've passed the following topics.
-                    <div *ngFor="let topic of currentQuestion.passedTopics">{{topic}}</div>
+                    <h4 *ngIf="currentQuestion.passedTopics.length > 0">You have been approved to skip the following topics:</h4>
+                    <h4 *ngIf="currentQuestion.passedTopics.length <= 0">Congratulations! You have scored 75%!</h4>
+                    <div *ngFor="let topic of currentQuestion.passedTopics"><i class="fas fa-check"></i> {{topic}}</div>
                 </div>
             </div>
             <div class="modal-footer text-muted">

@@ -34,13 +34,13 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 description: 'Quick overview of Neural Networks, followed by a few interesting materials concerning convolutional neural networks and recurrent neural networks by Andrej Karpathy.',
                 imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
                 materials: [
-                    {id: 10011, name:'Placement test', type: 'Test', duration: '2 minutes', text: 'Test your knowledge.' },
-                    {id: 10012, name:'Intro', type: 'Text', duration: '1 minute', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                    {id: 10013, name:'But what *is* a Neural Network?', duration: '19 minutes', type: 'Video', url: 'https://www.youtube.com/embed/aircAruvnKk'},
-                    {id: 10014, name:'CS231n: Convolutional Neural Networks', type: 'Link', duration: '12 minutes', url: 'http://cs231n.github.io/convolutional-networks/'},
-                    {id: 10015, name:'The Unreasonable Effectiveness of Recurrent Neural Networks', type: 'Link', duration: '14 minutes', url: 'http://karpathy.github.io/2015/05/21/rnn-effectiveness/'},
-                    {id: 10016, name:'10 misconceptions about Neural Networks', type: 'Link', duration: '8 minutes', url: 'http://www.turingfinance.com/misconceptions-about-neural-networks/'},
-                    {id: 10017, name:'Final test', type: 'Test', duration: '4 minutes', text:'Congrats'}
+                    {id: 10011, name:'Intro', type: 'Text', duration: '1 minute', text: 'In out firm neural networks are an essential part of our work. Every employee must be familiar with the basic concepts for neural networks. We have carefully collected several materials we want everybody to have red. Good luck and dont be shy to ask questions!' },
+                    {id: 10012, name:'Placement test', type: 'Test', duration: '2 minutes', text: 'Test your knowledge before you start!' },
+                    {id: 10013, name:'But what *is* a Neural Network?', duration: '19 minutes', type: 'Video', text: 'An excellent video exploring the basics of a neural network.', url: 'https://www.youtube.com/embed/aircAruvnKk'},
+                    {id: 10014, name:'CS231n: Convolutional Neural Networks', type: 'Link', duration: '12 minutes', text: 'Convolutional neural networks are commonly used in our projects. This article by the famous Andrej Karpathy is a great way to get into the concepts.', url: 'http://cs231n.github.io/convolutional-networks/'},
+                    {id: 10015, name:'The Unreasonable Effectiveness of Recurrent Neural Networks', type: 'Link', duration: '14 minutes', text:'Recurrent neural networks have proven to be a surprisingly efficient way train our models dealing with natural language proccesing. This article is a must for everybody participating in a NLP project!', url: 'http://karpathy.github.io/2015/05/21/rnn-effectiveness/'},
+                    {id: 10016, name:'10 misconceptions about Neural Networks', type: 'Link', duration: '8 minutes', text:'And lastly, a bit more entertaining article looking into some common misconceptions about neural networks. This article is not required but we find it quite helpful.', url: 'http://www.turingfinance.com/misconceptions-about-neural-networks/'},
+                    {id: 10017, name:'Final test', type: 'Test', duration: '4 minutes', text:''}
                 ]
             });
 

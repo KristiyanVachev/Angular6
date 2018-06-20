@@ -26,7 +26,7 @@ export class CourseComponent implements OnInit {
 
     ngOnInit(): void {
         this.getCourse();
-        this.courseTaken = {id: 1, courseId: 1001, isFinished: false, materialsFinished:[10011, 10012, 10013]};
+        this.courseTaken = {id: 1, courseId: 1001, isFinished: false, materialsFinished:[]};
     }
 
     getCourse(): void {
