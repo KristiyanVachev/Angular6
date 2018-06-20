@@ -30,14 +30,17 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         if (courses.length < 1){
             courses.push({
                 id: 1001,
-                name: 'Deep learning',
-                description: 'Deep learning fundamentals',
+                name: 'Neural Networks',
+                description: 'Quick overview of Neural Networks, followed by a few interesting materials concerning convolutional neural networks and recurrent neural networks by Andrej Karpathy.',
                 imageUrl: 'https://zdnet4.cbsistatic.com/hub/i/2018/04/13/36c52953-7ab9-4608-a848-71d1d538856e/2cad00bf6c3dc3ff21009836b989cda7/td-deep-learning.jpg',
                 materials: [
-                    {id: 10011, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
-                    {id: 10012, name:'Coursera course', description: 'Coursera course by Andrew Ng', type: 'Link', url: 'https://www.coursera.org/learn/machine-learning/home/welcome'},
-                    {id: 10013, name:'Finished link', description: 'Finished coursera link', type: 'Text', text:'How was it? Wanna do a test?'},
-                    {id: 10014, name:'Finish', description: 'You finished the course', type: 'Text', text:'Congtats'}
+                    {id: 10011, name:'Placement test', type: 'Test', text: 'Test your knowledge.' },
+                    {id: 10012, name:'Intro', type: 'Text', text: 'This course explores the fundamentals of deep learning. Good luck!' },
+                    {id: 10013, name:'But what *is* a Neural Network?', description: '', type: 'Video', url: 'https://www.youtube.com/embed/aircAruvnKk'},
+                    {id: 10014, name:'CS231n: Convolutional Neural Networks', description: '', type: 'Link', url: 'http://cs231n.github.io/convolutional-networks/'},
+                    {id: 10015, name:'The Unreasonable Effectiveness of Recurrent Neural Networks', description: '', type: 'Link', url: 'http://karpathy.github.io/2015/05/21/rnn-effectiveness/'},
+                    {id: 10016, name:'10 misconceptions about Neural Networks', description: '', type: 'Link', url: 'http://www.turingfinance.com/misconceptions-about-neural-networks/'},
+                    {id: 10017, name:'Final test', description: '', type: 'Test', text:'Congrats'}
                 ]
             });
 
